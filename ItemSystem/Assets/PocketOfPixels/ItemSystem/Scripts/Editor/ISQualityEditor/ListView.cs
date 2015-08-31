@@ -9,7 +9,7 @@ namespace PocketOfPixels.ItemSystem.Editor
         //List all of the stored qualities in the database.
         void ListView()
         {
-            scrollPos = EditorGUILayout.BeginScrollView(scrollPos, GUILayout.ExpandHeight(true));
+            _scrollPos = EditorGUILayout.BeginScrollView(_scrollPos, GUILayout.ExpandHeight(true));
 
             DisplayQualities();
 

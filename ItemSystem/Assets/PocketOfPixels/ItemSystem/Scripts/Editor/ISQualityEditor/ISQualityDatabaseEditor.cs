@@ -2,7 +2,6 @@
 using UnityEditor;
 using System.Collections;
 
-
 namespace PocketOfPixels.ItemSystem.Editor
 {
     public partial class ISQualityDatabaseEditor : EditorWindow
@@ -10,7 +9,7 @@ namespace PocketOfPixels.ItemSystem.Editor
         ISQualityDatabase qualityDatabase;
         Texture2D selectedTex;
         int selectedIndex = -1;
-        Vector2 scrollPos; //Scroll position for the list view.
+        Vector2 _scrollPos; //Scroll position for the list view.
 
         const int SPRITE_BUTTON_SIZE = 46;
 
@@ -18,8 +17,7 @@ namespace PocketOfPixels.ItemSystem.Editor
         const string DATABASE_PATH = @"Database";
         const string DATABASE_FULL_PATH = @"Assets/" + DATABASE_PATH + "/" + DATABASE_NAME;
 
-        [MenuItem("PoP/Database/Quality Editor %#i")]
-
+        [MenuItem("PoP/Database/Quality Editor %#w")]
         public static void Init()
         {
             ISQualityDatabaseEditor window = EditorWindow.GetWindow<ISQualityDatabaseEditor>();
