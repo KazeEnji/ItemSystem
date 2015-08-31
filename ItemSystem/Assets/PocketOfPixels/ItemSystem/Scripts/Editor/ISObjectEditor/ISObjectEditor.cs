@@ -23,8 +23,13 @@ namespace PocketOfPixels.ItemSystem.Editor
         void OnGUI()
         {
             TopTabBar();
+
+            GUILayout.BeginHorizontal();
             ListView();
             ItemDetails();
+            GUILayout.EndHorizontal();
+
+            BottomStatusBar();
         }
     }
 }

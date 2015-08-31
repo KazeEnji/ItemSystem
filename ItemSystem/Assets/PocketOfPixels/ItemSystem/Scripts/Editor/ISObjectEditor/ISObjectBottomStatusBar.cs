@@ -5,10 +5,10 @@ namespace PocketOfPixels.ItemSystem.Editor
 {
     public partial class ISObjectEditor
     {
-        void ItemDetails()
+        void BottomStatusBar()
         {
-            GUILayout.BeginHorizontal("Box", GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
-            GUILayout.Label("Detail View");
+            GUILayout.BeginHorizontal("Box", GUILayout.ExpandWidth(true));
+            GUILayout.Label("Bottom Status Bar");
             GUILayout.EndHorizontal();
         }
     }

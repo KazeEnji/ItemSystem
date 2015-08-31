@@ -8,11 +8,31 @@ namespace PocketOfPixels.ItemSystem.Editor
         void TopTabBar()
         {
             GUILayout.BeginHorizontal("Box", GUILayout.ExpandWidth(true));
-            GUILayout.Button("Weapons");
-            GUILayout.Button("Armor");
-            GUILayout.Button("Potions");
-            GUILayout.Button("About");
+            WeaponTab();
+            ArmorTab();
+            PotionsTab();
+            AboutTab();
             GUILayout.EndHorizontal();
+        }
+
+        void WeaponTab()
+        {
+            GUILayout.Button("Weapons");
+        }
+
+        void ArmorTab()
+        {
+            GUILayout.Button("Armor");
+        }
+
+        void PotionsTab()
+        {
+            GUILayout.Button("Potions");
+        }
+
+        void AboutTab()
+        {
+            GUILayout.Button("About");
         }
     }
 }
