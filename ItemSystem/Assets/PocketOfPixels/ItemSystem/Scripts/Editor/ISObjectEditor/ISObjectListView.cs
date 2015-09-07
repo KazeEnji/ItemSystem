@@ -11,7 +11,8 @@ namespace PocketOfPixels.ItemSystem.Editor
         void ListView()
         {
             _scrollPos = GUILayout.BeginScrollView(_scrollPos, "Box", GUILayout.ExpandHeight(true), GUILayout.Width(_listViewWidth));
-           GUILayout.EndScrollView();
+            GUILayout.Label("List View");
+            GUILayout.EndScrollView();
         }
     }
 }
