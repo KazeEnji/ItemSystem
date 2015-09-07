@@ -8,7 +8,6 @@ namespace PocketOfPixels.ItemSystem
         GameObject Prefab
         {
             get;
-            set;
         }
     }
 }

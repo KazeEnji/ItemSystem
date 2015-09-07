@@ -3,16 +3,27 @@ using System.Collections;
 
 namespace PocketOfPixels.ItemSystem
 {
+    [System.Serializable]
     public class ISWeapon : ISObject, IISWeapon, IISDestructable, IISEquipable, IISGameObject
     {
-        [SerializeField]int _minDamage;
-        [SerializeField]int _durability;
-        [SerializeField]int _maxDurability;
+        [SerializeField] int _minDamage;
+        [SerializeField] int _durability;
+        [SerializeField] int _maxDurability;
+        [SerializeField] ISEquipmentSlot _equipmentSlot;
+        [SerializeField] GameObject _prefab;
 
-        public ISWeapon(int durability, int maxDurability)
+        public ISWeapon()
+        {
+            _equipmentSlot = new ISEquipmentSlot();
+            _prefab = new GameObject();
+        }
+
+        public ISWeapon(int durability, int maxDurability, ISEquipmentSlot equipmentSlot, GameObject prefab)
         {
             _durability = durability;
             _maxDurability = maxDurability;
+            _equipmentSlot = equipmentSlot;
+            _prefab = prefab;
         }
 
         public int MinDamage
@@ -56,16 +67,48 @@ namespace PocketOfPixels.ItemSystem
             {
                 _durability = 0;
             }
+
+            if(_durability == 0)
+            {
+                Break();
+            }
         }
 
+        //Reduce the durability to 0.
         public void Break()
         {
-            throw new System.NotImplementedException();
+            _durability = 0;
         }
 
         public void Repair()
         {
+            _maxDurability--;
+
+            if(_maxDurability > 0)
+            {
+                _durability = _maxDurability;
+            }
+        }
+
+        public ISEquipmentSlot EquipmentSlot
+        {
+            get 
+            {
+                return _equipmentSlot;
+            }
+        }
+
+        public bool Equip()
+        {
             throw new System.NotImplementedException();
+        }
+
+        public GameObject Prefab
+        {
+            get
+            {
+                return _prefab;
+            }
         }
     }
 }
