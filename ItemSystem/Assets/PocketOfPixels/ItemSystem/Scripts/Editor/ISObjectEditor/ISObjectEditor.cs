@@ -6,6 +6,12 @@ namespace PocketOfPixels.ItemSystem.Editor
 {
     public partial class ISObjectEditor : EditorWindow
     {
+        ISWeaponDatabase weaponDatabase;
+
+        const string DATABASE_NAME = @"PoPWeaponDatabase.asset";
+        const string DATABASE_PATH = @"Database";
+        const string DATABASE_FULL_PATH = @"Assets/" + DATABASE_PATH + "/" + DATABASE_NAME;
+
         [MenuItem("PoP/Database/Item System Editor %#i")]
         public static void Init()
         {
@@ -17,7 +23,10 @@ namespace PocketOfPixels.ItemSystem.Editor
 
         void OnEnable()
         {
-
+            if(weaponDatabase == null)
+            {
+                weaponDatabase = ISWeaponDatabase.GetDatabase<ISWeaponDatabase>(DATABASE_PATH, DATABASE_NAME);
+            }
         }
 
         void OnGUI()

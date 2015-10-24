@@ -12,7 +12,7 @@ namespace PocketOfPixels.ItemSystem
         [SerializeField]int burden;
         [SerializeField]ISQuality quality;
 
-        string IISObject.Name
+        public string Name
         {
             get
             {
@@ -24,7 +24,7 @@ namespace PocketOfPixels.ItemSystem
             }
         }
 
-        int IISObject.Value
+        public int Value
         {
             get
             {
@@ -36,7 +36,7 @@ namespace PocketOfPixels.ItemSystem
             }
         }
 
-        Sprite IISObject.Icon
+        public Sprite Icon
         {
             get
             {
@@ -48,7 +48,7 @@ namespace PocketOfPixels.ItemSystem
             }
         }
 
-        int IISObject.Burden
+        public int Burden
         {
             get
             {
@@ -60,7 +60,7 @@ namespace PocketOfPixels.ItemSystem
             }
         }
 
-        ISQuality IISObject.Quality
+        public ISQuality Quality
         {
             get
             {

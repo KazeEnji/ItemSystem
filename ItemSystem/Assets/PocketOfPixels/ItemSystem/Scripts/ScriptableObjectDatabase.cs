@@ -53,7 +53,7 @@ namespace PocketOfPixels
             EditorUtility.SetDirty(this);
         }
 
-        public U GetDatabase<U>(string _dbPath, string _dbName) where U : ScriptableObject
+        public static U GetDatabase<U>(string _dbPath, string _dbName) where U : ScriptableObject
         {
             string _dbFullPath = @"Assets/" + _dbPath + "/" + _dbName;
 

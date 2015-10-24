@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEditor;
 using System.Collections;
 
 namespace PocketOfPixels.ItemSystem
@@ -15,7 +16,6 @@ namespace PocketOfPixels.ItemSystem
         public ISWeapon()
         {
             _equipmentSlot = new ISEquipmentSlot();
-            _prefab = new GameObject();
         }
 
         public ISWeapon(int durability, int maxDurability, ISEquipmentSlot equipmentSlot, GameObject prefab)
@@ -109,6 +109,11 @@ namespace PocketOfPixels.ItemSystem
             {
                 return _prefab;
             }
+        }
+
+        public void OnGUI()
+        {
+            Name = EditorGUILayout.TextField("Name: ",  Name);
         }
     }
 }
